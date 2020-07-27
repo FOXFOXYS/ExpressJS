@@ -1,0 +1,23 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+    <h1 class="margin">Tous les posts</h1>
+
+    <section class="articles">
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-sm-6" id="{{post.id}}">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{post.title}}</h5>
+                            <p class="card-text">{{post.body}}</p>
+                            <a href="/blogs/{{post.id}}" class="card-link">Lien</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+{% endblock %}
